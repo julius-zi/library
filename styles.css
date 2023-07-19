@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --accent-color:#d3cdae;
+    --coffee-color: #332409;
+}
+
+.footer{
+    margin-top: auto;
+    margin-bottom: 10px;
+}
