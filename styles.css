@@ -1,12 +1,205 @@
+/* basement start */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --accent-color:#d3cdae;
-    --coffee-color: #332409;
+    --background-color:#1e2031;
+}
+
+body{
+    background-color: var(--background-color);
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
 }
 
 .footer{
-    margin-top: auto;
     margin-bottom: 10px;
+    display: none;
 }
+
+.footer img{
+    height: 20px;
+}
+
+.header{
+    padding: 40px;
+    padding-left: 100px;
+    background-color: #2a2c41;
+    box-shadow: 0px 9px 13px -8px rgba(0,0,0,0.1);
+}
+
+/* basement end */
+
+.mid {
+    margin-top: 50px;
+    margin-left: 100px;
+    width: min(70vw, 800px);
+    display: flex;
+    flex-direction:column;
+}
+
+form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+form.hide{
+    display: none;
+}
+
+label, button, .list{
+    margin-top: 20px;
+}
+
+#submit {
+    padding: 10px;
+    border: 1.5px solid rgb(170, 100, 202);
+    background-color: var(--background-color);
+    border-radius: 5px;
+    color: rgb(170, 100, 202);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+#submit:hover{
+    border: 1.5px solid rgb(180, 112, 212);
+    color: rgb(180, 112, 212);
+}
+
+
+
+.list span p {
+    color: rgb(200, 209, 218);
+    padding: 20px;
+    font-size: 1.2rem;
+    background-color: #2b2e46;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.list span {
+    display: block;
+    margin-top: 25px;
+}
+
+.new-entry-button {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgb(170, 100, 202);
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.new-entry-button:hover {
+    background-color: rgb(180, 112, 212);
+}
+
+
+input{
+    padding: 10px;
+    border: 1.5px solid rgb(170, 100, 202);
+    background-color: var(--background-color);
+    border-radius: 5px;
+    color: rgb(170, 100, 202);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.x{
+    margin-top: 0;
+    float: right;
+    padding: 4px 9px 5px 8px;
+    background-color: rgb(170, 100, 202);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.x:hover{
+    background-color: rgb(180, 112, 212);
+}
+
+  
+  /* Switch 1 Specific Styles Start */
+
+  .switch_box{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 200px;
+    min-width: 200px;
+    height: 200px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+
+  .switch_1 {
+    border: none;
+  }
+  
+  .box_1{
+    background: var(--background-color);
+  }
+  
+  input[type="checkbox"].switch_1{
+    font-size: 30px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 2em;
+    height: 1em;
+    background: #2b2e46;
+    border-radius: 3em;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    }
+    
+    input[type="checkbox"].switch_1:checked{
+        background: #5a6196;
+    }
+    
+    input[type="checkbox"].switch_1:after{
+    position: absolute;
+    content: "";
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+            box-shadow: 0 0 .25em rgba(0,0,0,.3);
+    -webkit-transform: scale(.7);
+            transform: scale(.7);
+    top: 0;
+    left: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    }
+    
+    input[type="checkbox"].switch_1:checked:after{
+    left: calc(100% - 1em);
+    }
+
+  /* Switch 1 Specific Styles End */

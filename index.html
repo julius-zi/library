@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-up Form</title>
+    <title>Library</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patua+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     
-        <div class="footer"><p class="footer">Made by <a href="https://github.com/julius-zi">julius-zi</a></p></div>
+    <div class="header">
+        <h1>Library</h1>
+    </div>
+    <div class="mid">
+        <button class="new-entry-button">+ New book</button>
+        <form class="hide">
+
+            <label for="title">Title</label>
+            <input id="title" type="text" required>
+
+            <label for="author">Author</label>
+            <input id="author" type="text" required>
+
+            <label for="alreadyRead">Already read?</label>
+            <div switch_box box_1>
+            <input class="switch_1" type="checkbox" id="alreadyRead" name="alreadyRead" required>
+            </div>
+            <button id="submit" type="submit">Add book</button>
+        </form>
+
+    <div class="list">
+        <span>Your books:<br>
+        </span>
         
+    </div>
+    </div>
+
+    <div class="footer">
+        <p>Made by <a href="https://github.com/julius-zi">julius-zi<img src="assets/github-mark.svg"></a></p>
+    </div>
     
     <script src="main.js"></script>
 </body>
