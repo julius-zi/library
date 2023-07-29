@@ -19,20 +19,7 @@ function Book(title, author, alreadyRead) {
     this.alreadyRead = alreadyRead
 }
 
-/* Book entry dummys */ 
-const harryPotter = new Book("Harry Potter", "J. K. Rowling", true)
-books.push(harryPotter);
-const theHobbit = new Book("The Hobbit", "J. R. R. Tolkien", false)
-books.push(theHobbit);
 
-books.forEach(book => {
-    let p = document.querySelector(".list span").appendChild(document.createElement("p"));
-    p.innerText += `${book.title} by ${book.author}, Already read? ${book.alreadyRead}`
-    let button = document.createElement("button");
-    button.textContent = "x"
-    button.classList.add("x")
-    p.append(button);
-})
 
 /* Save new book entry as Object and display it in DOM */
 function addNewBook(e) {
@@ -44,15 +31,36 @@ function addNewBook(e) {
     )
     books.push(newBook);
     document.querySelector("form").reset();
-    let p = document.querySelector(".list span").appendChild(document.createElement("p"));
-    p.innerText += `${newBook.title} by ${newBook.author}, Already read? ${newBook.alreadyRead}`
+    let div = document.querySelector(".list span").appendChild(document.createElement("div"));
+
+    /* x button */
     let button = document.createElement("button");
     button.textContent = "x"
     button.classList.add("x")
-    p.append(button);
+    div.append(button);
     button.addEventListener("click", removeCard);
-    form.classList.add("hide")
 
+    /* Create elements */
+    let p1 = div.appendChild(document.createElement("p"));
+    p1.classList.add("p1");
+    let p2 = div.appendChild(document.createElement("p"));
+    p2.classList.add("p2");
+    let p3 = div.appendChild(document.createElement("p"));
+    p3.classList.add("p3");
+    
+    /* Output in the DOM */
+    if(newBook.alreadyRead) {
+        newBook.alreadyRead = "Already read";
+        p3.style.color ="green";
+    } else {
+        newBook.alreadyRead = "Not read yet"
+        p3.style.color ="#d65c47";
+    }
+    p1.innerText += `${newBook.title}\n`
+    p2.innerText += `by ${newBook.author}\n`
+    p3.innerText += `${newBook.alreadyRead}`
+
+    form.classList.add("hide")
 }
 
 function removeCard() {
