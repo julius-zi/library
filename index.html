@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet"></head>
 
 <body>
     
@@ -17,20 +17,24 @@
     </div>
     <div class="mid">
         <button class="new-entry-button">+ New book</button>
-        <form class="hide">
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <form>
+                    <h4>Create a new library entry</h4>
+                    <label for="title">Title</label>
+                    <input id="title" type="text" required>
 
-            <label for="title">Title</label>
-            <input id="title" type="text" required>
+                    <label for="author">Author</label>
+                    <input id="author" type="text" required>
 
-            <label for="author">Author</label>
-            <input id="author" type="text" required>
-
-            <label for="alreadyRead">Already read?</label>
-            <div switch_box box_1>
-            <input class="switch_1" type="checkbox" id="alreadyRead" name="alreadyRead" required>
+                    <label for="alreadyRead">Already read?</label>
+                    <div>
+                    <input class="switch_1" type="checkbox" id="alreadyRead" name="alreadyRead" required>
+                    </div>
+                    <button id="submit" type="submit">Add book</button>
+                </form>
             </div>
-            <button id="submit" type="submit">Add book</button>
-        </form>
+        </div>
 
     <div class="list">
         <span>Your books:<br>

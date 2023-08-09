@@ -1,14 +1,17 @@
 
 const form = document.querySelector("form")
+const modal = document.getElementById("myModal");
 
 /* Open/reduce new book entry form */
 document.querySelector(".new-entry-button").addEventListener("click", (e) => {
-    if(form.classList.contains("hide")) {
-        form.classList.remove("hide")
-    } else {
-        form.classList.add("hide")
-    }
+        modal.style.display = "flex"
 })
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
 
 
 let books = [];
@@ -47,21 +50,45 @@ function addNewBook(e) {
     p2.classList.add("p2");
     let p3 = div.appendChild(document.createElement("p"));
     p3.classList.add("p3");
+    let toggle_container = div.appendChild(document.createElement("div"));
+    let toggle = toggle_container.appendChild(document.createElement("input"));
+    toggle.setAttribute("type","checkbox");
+    toggle.classList.add("switch_1");
+
     
     /* Output in the DOM */
     if(newBook.alreadyRead) {
+        toggle.checked = true;
+        toggle.style.backgroundColor = "rgb(180, 112, 212)"
         newBook.alreadyRead = "Already read";
-        p3.style.color ="green";
     } else {
+        toggle.checked = false;
+        toggle.style.backgroundColor = "#1e2031"
         newBook.alreadyRead = "Not read yet"
-        p3.style.color ="#d65c47";
     }
     p1.innerText += `${newBook.title}\n`
     p2.innerText += `by ${newBook.author}\n`
-    p3.innerText += `${newBook.alreadyRead}`
 
     form.classList.add("hide")
+
+ /* Already read toggle switch Listener */
+    toggle.addEventListener("click", (e) => {
+        if(toggle.checked) {
+            toggle.style.backgroundColor = "rgb(170, 100, 202)"
+            newBook.alreadyRead = "Already read";
+            p3.innerText = `${newBook.alreadyRead}`
+        } else {
+            toggle.style.backgroundColor = "#1e2031"
+            newBook.alreadyRead = "Not read yet";
+            p3.innerText = `${newBook.alreadyRead}`
+        }
+    })
+
+    p3.innerText += `${newBook.alreadyRead}`
+
+    modal.style.display = "none"
 }
+
 
 function removeCard() {
     document.querySelector(".x").parentElement.remove();

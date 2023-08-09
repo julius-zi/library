@@ -1,4 +1,4 @@
-# library
+# Library
 
 This is my solution for the Library project of TheOdinProject.
 
